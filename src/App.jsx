@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 function App() {
   // counts 상태를 배열로 관리
-  const [counts, setCounts] = useState([0, 0, 0, 0])
+  const [counts, setCounts] = useState([0, 0, 0])
 
   // map 메서드를 사용하여 불변성을 유지하면서 특정 인덱스의 값만 증가
   const onIncrement = (index) => {
@@ -12,6 +12,9 @@ function App() {
         i === index ? count + 1 : count
       )
     )
+  }
+  const onAddCounter = () => {
+    setCounts(prevCounts => [...prevCounts, 0])
   }
 
   // counts 배열의 모든 값을 더함
